@@ -1,4 +1,4 @@
-const api_key = "884527771134448e91f839f12442934e";
+const api_key = process.env.REACT_APP_NEWS_API_KEY;
 export const fetchNews = async (category) => {
   try {
     const res = await fetch(
