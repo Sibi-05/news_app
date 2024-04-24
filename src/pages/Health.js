@@ -26,9 +26,9 @@ const Health = () => {
       return "No News Available";
     }
 
-    return newsSources.articles.map((cur) => {
+    return newsSources.articles.map((cur, ind) => {
       return (
-        <div key={cur.publishedAt} className="col-xl-4 col-md-6 mb-3">
+        <div key={ind} className="col-xl-4 col-md-6 mb-3">
           <div className="card h-100 bg-dark text-light">
             <img
               src={

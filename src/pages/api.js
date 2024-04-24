@@ -6,6 +6,7 @@ export const fetchNews = async (category) => {
     );
     const data = await res.json();
     console.log(api_key);
+    console.log(data);
     return data;
   } catch (error) {
     console.error("Error fetching news sources:", error);
