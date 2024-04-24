@@ -1,16 +1,10 @@
-import React, { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import React, { NavLink, Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../Card.css";
 
 const RootLayout = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
   return (
     <div>
       <header>
@@ -19,8 +13,8 @@ const RootLayout = () => {
             <button
               className="navbar-toggler"
               type="button"
-              onClick={toggleNav}
-              aria-expanded={isNavOpen ? "true" : "false"}
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
             >
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -30,9 +24,8 @@ const RootLayout = () => {
             </div>
 
             <div
-              className={
-                "collapse navbar-collapse" + (isNavOpen ? " show " : "")
-              }
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
             >
               <div className="navbar-nav ms-4 fw-bolder nav-groups">
                 <NavLink className="nav-link" activeclassname="active" to="/">
