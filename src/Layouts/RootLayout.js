@@ -1,4 +1,5 @@
-import React, { NavLink, Outlet } from "react-router-dom";
+import React from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -10,48 +11,73 @@ const RootLayout = () => {
       <header>
         <nav className="navbar navbar-expand-md bg-body-tertiary">
           <div className="container-fluid">
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
             <div className="d-flex align-items-center">
+              <h1 className="mb-0 me-auto fw-bolder">L E A F</h1>{" "}
               <i className="bi bi-feather me-2 fs-2 text-success"></i>
-              <h1 className="mb-0">L E A F</h1>
             </div>
 
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
+            <button
+              className="navbar-toggler ms-auto text-success"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
             >
-              <div className="navbar-nav ms-4 fw-bolder nav-groups">
-                <NavLink className="nav-link" activeclassname="active" to="/">
-                  Home
-                </NavLink>
-                <NavLink
-                  className="nav-link"
-                  activeclassname="active"
-                  to="/sports"
-                >
-                  Sports
-                </NavLink>
-                <NavLink
-                  className="nav-link"
-                  activeclassname="active"
-                  to="/entertainment"
-                >
-                  Entertainment
-                </NavLink>
-                <NavLink
-                  className="nav-link"
-                  activeclassname="active"
-                  to="/health"
-                >
-                  Health
-                </NavLink>
+              <span>
+                <i className="bi bi-list-nested"></i>
+              </span>
+            </button>
+
+            <div
+              className="offcanvas offcanvas-end "
+              tabIndex="-1"
+              id="offcanvasNavbar"
+            >
+              <div className="offcanvas-header">
+                <div className="d-flex align-items-center">
+                  <h1 className="mb-0 me-auto">L E A F</h1>{" "}
+                  <i className="bi bi-feather me-2 fs-2 text-success"></i>
+                </div>
+              </div>
+              <div className="offcanvas-body ">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0 fw-bolder">
+                  <li className="nav-item ">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/"
+                      exact
+                    >
+                      Home
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/sports"
+                    >
+                      Sports
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/entertainment"
+                    >
+                      Entertainment
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/health"
+                    >
+                      Health
+                    </NavLink>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
