@@ -16,7 +16,7 @@ const Sports = () => {
 
     getNews();
   }, []);
-
+  console.log(category);
   const renderSportsNews = () => {
     if (
       !newsSources ||
